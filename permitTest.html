@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>San Marcos Permits</title>
+<script src="https://js.arcgis.com/4.9/"></script><!--ArcGIS JavaScript API-->
+<style>
+html, body, #viewDiv {
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	width: 100%;
+}
+#infoDiv {
+	background-color: white;
+	color: black;
+	padding: 6px;
+	width: 350px;
+}
+#optionsDiv {
+	background-color: dimgray;
+	color: white;
+	padding: 10px;
+	width: 350px;
+}
+.esri-popup .esri-popup-header .esri-title {
+	font-size: 18px;
+	font-weight: bolder;
+}
+.esri-popup .esri-popup-body .esri-popup-content {
+	font-size: 14px;
+}
+</style>
+<link rel="stylesheet" href="https://js.arcgis.com/4.9/esri/css/main.css">
+<script src="./mapping.js"> </script>
+</head>
+
+<body>
+<div id="viewDiv"></div>
+<div id="infoDiv"> Select Permit type:
+  <select class="esri-widget" id="permit-type">
+    <option value="Certificate Of Occupancy" selected="selected">Certificate Of Occupancy</option>
+  </select>
+  Value:
+  <select class="esri-widget" id="signSelect">
+    <option value=">">is greater than</option>
+    <option value="<">is less than</option>
+  </select>
+  <select class="esri-widget" id="valSelect">
+    <option value="1">$1,000</option>
+    <option value="5000">$5,000</option>
+    <option value="10000">$10,000</option>
+    <option value="50000">$50,000</option>
+    <option value="700000">$700,000</option>
+  </select>
+  <br>
+  <button class="esri-widget" id="doBtn">Do Query</button>
+</div>
+</body>
+</html>
